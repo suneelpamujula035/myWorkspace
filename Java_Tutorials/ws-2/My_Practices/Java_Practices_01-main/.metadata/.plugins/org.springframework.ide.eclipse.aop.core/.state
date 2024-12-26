@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="spring-jdbc-ResultSetExtractor"/>
+<aop-project name="InitBinder-editor-assignments"/>
+<aop-project name="spring-jdbc-select-002"/>
+<aop-project name="spring-jdbc-001"/>
+<aop-project name="spring-love-calculator"/>
+<aop-project name="springboot-hibernate-one-to-one-mapping"/>
+<aop-project name="SpringMVC_01"/>
+<aop-project name="spring-jdbc-update"/>
+<aop-project name="spring-love-calculator-sessionattribute"/>
+<aop-project name="express-dhaba"/>
+<aop-project name="student-management"/>
+<aop-project name="springboot-hibernate-one-to-many-mapping"/>
+</aop-reference-model>

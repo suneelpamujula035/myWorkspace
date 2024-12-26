@@ -1,0 +1,55 @@
+package com.java.practices;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		String s = "aabbb";
+		char[] y = s.toCharArray();
+		int size = y.length;
+		int i=0;
+		
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		for(Character data : y)
+		{
+			if(map.containsKey(data))
+			{
+				int oldval = map.get(data);
+				int newval = oldval+1;
+				map.put(data, newval);
+			}
+			else
+			{
+				map.put(data, 1);
+			}
+		}
+		while(i!=size)
+		{
+			if(map.containsKey(y[i]))
+			{
+				int oldval = map.get(y[i]);
+				int newval = oldval+1;
+				map.put(y[i], newval);
+			}
+			else
+			{
+				map.put(y[i], 1);
+			}
+			i++;
+		}
+		
+		Set<Entry<Character, Integer>> lmap = map.entrySet();
+		for(Map.Entry<Character, Integer> data : lmap)
+		{
+			String str = data.getKey()+"  -  "+data.getValue();
+			System.out.println(str);
+		}		
+		
+	}
+
+}

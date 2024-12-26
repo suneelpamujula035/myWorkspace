@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body bgcolor="aqua">
+    
+    <center><h1>Form Validation In JavaScript</h1>
+        <form action="Success.html" name="form4" method="post" onsubmit="return validNumber()">
+            Number : <input type="number" name="num23"><br/>
+      <input type="submit" value="Submit">
+        </form>
+    </center>
+    <script>
+        
+        function validNumber(){
+           var mobile = document.form4.num23.value;
+
+           if(mobile.length == 10 ){
+               return true;
+           }
+           else{
+               alert("Please enter valid mobile number");
+               return false;
+           }
+           if(mobile == null || mobile == "" ){
+            alert("Please enter valid mobile number");
+               return false;
+           }
+        }
+    </script>
+</body>
+</html>

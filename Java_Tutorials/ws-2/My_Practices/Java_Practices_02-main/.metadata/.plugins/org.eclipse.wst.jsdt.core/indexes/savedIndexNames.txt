@@ -1,0 +1,21 @@
+INDEX VERSION 1.4+C:\JEE_Practices_02\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2075843936.index
+1734703654.index
+2634576440.index
+1630862409.index
+1225255220.index
+2157155772.index
+2826961404.index
+3516144130.index
+3572977754.index
+3325984333.index
+2846855421.index
+3247546614.index
+4289119549.index
+1767035745.index
+724763768.index
+1667951418.index
+646872150.index
+4087006554.index
+2555046621.index
+314635744.index

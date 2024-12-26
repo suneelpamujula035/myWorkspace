@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body bgcolor="pink">
+    
+    <center><h1>Form Validation In JavaScript</h1>
+        <form action="Success.html" name="form2" method="post" onsubmit="return validEmail()">
+            Email : <input type="text" name="email1"><br/>
+      <input type="submit" value="Submit">
+        </form>
+    </center>
+    <script>
+        function validEmail(){
+            var email2 = document.form2.email1.value;
+            var atPosition = email2.indexOf("@");
+            var dotPosition = email2.lastIndexOf(".");
+
+            if(atPosition<1 || dotPosition<atPosition+2 || dotPosition+2>= email2.length){
+                alert("Please enter valid email");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

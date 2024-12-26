@@ -1,0 +1,182 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="container-fluid">
+<h2>Invoice Info</h2>
+
+		<form:form  name="" action="saveInvoice" modelAttribute="myModel"
+			method="POST">
+
+			<form:hidden path="invoice.id" />
+          
+			<div class="form-group">
+			<label class="control-label col-sm-2" for="bill">Bill To:</label>
+			<div class="col-sm-2">
+			<form:select path="invoice.billTo" class="form-control" id="bill" required="required">
+			<optgroup label="Select Customer">
+			<form:option value="suneel">suneel</form:option>
+			<form:option value="naveen">naveen</form:option>
+			<form:option value="ganesh">ganesh</form:option>
+			<form:option value="mahesh">mahesh</form:option>
+			<form:option value="vinod">vinod</form:option>
+			</optgroup>
+			</form:select>
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<label class="control-label col-sm-2" for=invnum>Invoice:</label>
+			<div class="col-sm-4">
+			<form:input path="invoice.invoiceNumber" class="form-control" id="invnum" required="required"/>
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<label class="control-label col-sm-2" for=sta>Status:</label>
+			<div class="col-sm-4">
+			<form:select path="invoice.status" class="form-control" id="sta" required="required">
+			<optgroup label="Select Status">
+			<form:option value="Paid">Paid</form:option>
+			<form:option value="Sent">Sent</form:option>
+			<form:option value="Draft">Draft</form:option>
+			</optgroup>
+			</form:select>
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<label class="control-label col-sm-2" for="invdate">Invoice Date:</label>
+			<div class="col-sm-4">
+			<form:input type="date" path="invoice.date" class="form-control" id="invdate" required="required"/>
+			</div>
+			</div>
+			
+			
+			<div class="form-group">
+			<label class="control-label col-sm-2" for="duedate">Due Date:</label>
+			<div class="col-sm-4">
+			<form:input type="date" path="invoice.dueDate" class="form-control" id="duedate" required="required"/>
+			</div>
+			</div>
+			
+			
+	
+						
+		<h2>Invoice Details:</h2>
+		<table border="1" class="table table-striped" id="myTable">
+			<thead>
+				<tr>
+					<th>SNo</th>
+					<th>Product</th>
+					<th>Description</th>
+					<th>Price(INR)</th>
+					<th>Quantity</th>
+					<th>Tax(%)</th>
+					<th>Total</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			
+			
+			<tbody>
+			
+				<tr>
+				
+			<td><form:hidden path="product.id" /></td>
+			<td>
+			<form:select path="product.productName">
+			<optgroup label="Select Product">
+			<form:option value="laptop">laptop</form:option>
+			<form:option value="mobile">mobile</form:option>
+			<form:option value="book">book</form:option>
+			<form:option value="shirt">shirt</form:option>
+			<form:option value="shoes">shoes</form:option>
+			<form:option value="earphones">earphones</form:option>
+			</optgroup>
+			</form:select>
+			</td>
+				<td><form:input path="product.description" /></td>
+				<td><form:input path="product.price" /></td>
+				<td><form:input path="product.quantity" /></td>
+				<td><form:input path="product.tax" /></td>
+				<td><form:input path="product.total" /></td>
+				<td><button class=" btn btnDelete btn-danger">Delete</button></td>
+				</tr>
+				
+				<!-- <tr>
+ 					<td ><button onclick="addingRow()">Add</button></td>
+ 					<td><button onclick="deletingRow()">Delete</button></td>
+				</tr> -->
+			</tbody>
+		</table>
+		
+		<button class="btn btn-success" onclick="addingRow()">Add</button>
+		<!-- <button onclick="deletingRow()">Delete</button> -->
+		<input type="submit" value="Save" class="btn btn-primary"/>              <input type="reset" value="Cancel" class="btn btn-danger">
+		</form:form>
+	</div>
+	
+	<script>
+function addingRow() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(2);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
+  cell2.innerHTML = "NEW CELL2";
+  cell3.innerHTML = "NEW CELL3";
+  cell4.innerHTML = "NEW CELL4";
+  cell5.innerHTML = "NEW CELL5";
+  cell6.innerHTML = "NEW CELL6";
+  cell7.innerHTML = "NEW CELL7";
+  cell8.innerHTML = "NEW CELL8";
+}
+
+var index, table = document.getElementById('myTable');
+for(var i = 1; i < myTable.rows.length; i++)
+{
+    table.rows[i].cells[7].onclick = function()
+    {
+        index = this.parentElement.rowIndex;
+        myTable.deleteRow(index);
+    }; 
+}
+
+/*$(document).ready(function(){
+	$(".btnDelete").on('click', function(){
+		$(this).closest("tr").remove();
+	});
+});
+
+var ID = function () {
+	  return '_' + Math.random().toString(36).substr(2, 9);
+	}; */
+/*function deletingRow() {
+	  document.getElementById("myTable").deleteRow(0);
+	}*/
+/*function add_field() 
+{
+    var form = document.getElementsByTagName('form1')[0],  
+    input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('name', 'item');
+    form.appendChild(input);
+ };*/
+</script>
+</body>
+</html>

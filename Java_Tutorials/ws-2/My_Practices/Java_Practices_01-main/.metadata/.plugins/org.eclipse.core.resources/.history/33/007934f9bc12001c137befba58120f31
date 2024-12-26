@@ -1,0 +1,16 @@
+package com;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class CalculationTest {
+
+	@Test
+	public void test() {
+
+		Calculation c = new Calculation();
+		int result = c.add(20, 40);
+		Assert.assertEquals(70, result);//Expected Result, Actual Result
+	}
+
+}

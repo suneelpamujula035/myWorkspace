@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body bgcolor="orange">
+ 
+    <center><h1>Form Validation In JavaScript</h1>
+        <form action="Success.html" name="form3" method="post" onsubmit="return validDate()">
+            DateOfBirth : <input type="date" name="date1"><br/>
+      <input type="submit" value="Submit">
+        </form>
+    </center>
+    <script>
+        function validDate(){
+            var currentDate = new Date();
+            var dob = new Date(document.form3.date1.value);
+
+            if(dob > currentDate){
+                alert("Please enter valid date");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

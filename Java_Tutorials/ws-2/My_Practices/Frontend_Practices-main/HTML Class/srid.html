@@ -1,0 +1,276 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="../static/main.css"> -->
+
+</head>
+<body>
+
+	<div class="container-fluid">
+		<h2>Invoice Info</h2>
+
+		<form:form name="" action="saveInvoice" modelAttribute="myModel"
+			method="POST">
+
+			<form:hidden path="invoiceDto.id" />
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="bill">Bill To:</label>
+				<div class="col-sm-4">
+					<form:select path="invoiceDto.billTo" class="form-control"
+						id="bill" required="required">
+						<optgroup label="Select Customer">
+							<form:option value="suneel">suneel</form:option>
+							<form:option value="naveen">naveen</form:option>
+							<form:option value="ganesh">ganesh</form:option>
+							<form:option value="mahesh">mahesh</form:option>
+							<form:option value="vinod">vinod</form:option>
+						</optgroup>
+					</form:select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="invnum">Invoice:</label>
+				<div class="col-sm-4">
+					<form:input path="invoiceDto.invoiceNumber" class="form-control"
+						id="invnum" required="required" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="sta">Status:</label>
+				<div class="col-sm-4">
+					<form:select path="invoiceDto.status" class="form-control" id="sta"
+						required="required">
+						<optgroup label="Select Status">
+							<form:option value="Paid">Paid</form:option>
+							<form:option value="Sent">Sent</form:option>
+							<form:option value="Draft">Draft</form:option>
+						</optgroup>
+					</form:select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="invdate">Invoice
+					Date:</label>
+				<div class="col-sm-4">
+					<form:input type="date" path="invoiceDto.date" class="form-control"
+						id="invdate" required="required" />
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="duedate">Due
+					Date:</label>
+				<div class="col-sm-4">
+					<form:input type="date" path="invoiceDto.dueDate"
+						class="form-control" id="duedate" required="required" />
+				</div>
+			</div>
+
+
+
+			<div class="form-row">
+				<h2>Invoice Details:</h2>
+				<table border="1" class="table table-striped" id="myTable">
+					<thead>
+						<tr>
+							<th>SNo</th>
+							<th>Product</th>
+							<th>Description</th>
+							<th>Price(INR)</th>
+							<th>Quantity</th>
+							<th>Tax(%)</th>
+							<th>Total</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+
+
+					<tbody id="data_table">
+
+						<tr>
+
+							<td><form:hidden path="productDto.id" id="auto_id" value="1"
+									name="id1" class="form-control"/></td>
+							<td><form:select path="productDto.productName" id="product"
+									name="product1" class="form-control">
+									<optgroup label="Select Product">
+										<form:option value="laptop">laptop</form:option>
+										<form:option value="mobile">mobile</form:option>
+										<form:option value="book">book</form:option>
+										<form:option value="shirt">shirt</form:option>
+										<form:option value="shoes">shoes</form:option>
+										<form:option value="earphones">earphones</form:option>
+									</optgroup>
+								</form:select></td>
+							<td><form:input path="productDto.description"
+									id="description" name="description1" class="form-control" /></td>
+							<td><form:input path="productDto.price" id="price"
+									name="price1" class="form-control" /></td>
+							<td><form:input path="productDto.quantity" id="qty"
+									name="qty1" class="form-control"/></td>
+							<td><form:input path="productDto.tax" id="tax" name="tax1" class="form-control"/></td>
+							<td><form:input path="productDto.total" id="total"
+									name="total1" class="form-control"/></td>
+						</tr>
+					</tbody>
+
+					<tr>
+						<td colspan="7"></td>
+						<td><input type="button" class="add btn btn-success"
+							onclick="addNewRow();" value="Add New"></td>
+					</tr>
+					<tr>
+						<td colspan="6"
+							style="border-left: hidden; border-bottom: hidden;"></td>
+						<td>Sub Total :</td>
+						<td><span id="sub_total">0</span></td>
+					</tr>
+					<tr>
+						<td colspan="6"
+							style="border-left: hidden; border-bottom: hidden;"></td>
+						<td>Total Tax :</td>
+						<td><span id="total_tax">0</span></td>
+					</tr>
+					<tr>
+						<td colspan="6"
+							style="border-left: hidden; border-bottom: hidden;"></td>
+						<%-- <td><form:hidden path="invoiceDto.amount" id="amount"/></td> --%>
+						<td>Grand Total:</td>
+						<td><span id="grand_total">0</span></td>
+					</tr>
+				</table>
+			</div>
+
+			<!-- <button class="btn btn-success" onclick="add_row()">Add</button>
+			<button onclick="deletingRow()">Delete</button> -->
+			<div align="left">
+				<input type="submit" value="Save" class="btn btn-primary" /> <input
+					type="reset" value="Cancel" class="btn btn-danger">
+			</div>
+	</div>
+	<!-- <div class="form-row">
+		<div class="form-group col-md-2">
+			<label>Invoice Note(Optional) :</label>
+		</div>
+		<div class="form-group col-md-4">
+			<textarea class="form-control rounded-0" id="invoice_note" rows="3"
+				maxlength="1000" placeholder="Invoice Note"></textarea>
+		</div>
+
+		<div class="form-group col-md-2">
+			<label>Attachment(Optional) :</label>
+		</div>
+		<div class="form-group col-md-4">
+			<input type="file" class="form-control" id="attachment"
+				placeholder="Attachment">
+		</div>
+	</div> -->
+	</form:form>
+
+	<script type="text/javascript">
+		function addNewRow() {
+			var auto_id = document.getElementById("auto_id").value;
+			var product = document.getElementById("product").value;
+			var description = document.getElementById("description").value;
+			var price = document.getElementById("price").value;
+			var qty = document.getElementById("qty").value;
+			var tax = document.getElementById("tax").value;
+			var total = parseInt(price) * parseInt(qty);
+			if (product == "") {
+				alert("product must be filled out");
+			} else if (description == "") {
+				alert("description must be filled out");
+			} else if (price == "") {
+				alert("price must be filled out");
+			} else if (qty == "") {
+				alert("qty must be filled out");
+			} else {
+				var table = document.getElementById("data_table");
+				var table_len = (table.rows.length) -1;
+				var row = table.insertRow(table_len).outerHTML = 
+					    /* "<tr id='row" + table_len + "'> "+
+					      "<td id='auto_id" + table_len + "'>"
+						+ auto_id
+						+ "</td> "
+						+ "<td id='product" + table_len + "'>"
+						+ product
+						+ "</td> "
+						+ "<td id='description" + table_len + "'>"
+						+ description
+						+ "</td> "
+						+ "<td id='price" + table_len + "'>"
+						+ price
+						+ "</td> "
+						+ "<td id='qty" + table_len + "'>"
+						+ qty
+						+ "</td> "
+						+ "<td id='tax" + table_len + "'>"
+						+ tax
+						+ "</td> "
+						+ "<td id='total" + table_len + "'>"
+						+ total+ "</td> "+
+						"<td><i class='fa fa-trash' style='font-size:24px' onclick='deleteRow("
+						+ table_len + ")'> </i></td> " +
+						"</tr>"; */
+					
+						"<tr id='row" + table_len + "'> "+
+						"<td id='auto_id"+table_len+"'><input type='text' value='"+auto_id+"' class='form-control'></td> " +
+						"<td id='product"+table_len+"'><input type='text'  name='product' value='"+product+"' class='form-control'></td> " +
+						"<td id='description"+table_len+"' ><input type='text' name='description' value='"+description+"' class='form-control'></td> " +
+						"<td id='price"+table_len+"' ><input type='text' name='price' value='"+price+"' class='form-control'></td> " +
+						"<td id='qty"+table_len+"' ><input type='text' name='qty' value='"+qty+"' class='form-control'></td> " +
+						"<td id='tax"+table_len+"' ><input type='text' name='tax' value='"+tax+"' id='tax1"+table_len+"' class='form-control'></td> " +
+						"<td id='total"+table_len+"' ><input type='text' name='total' value='"+total+"' id='tot"+table_len+"' class='form-control'></td> " +
+
+						"<td><i class='fa fa-trash' style='font-size:24px' onclick='deleteRow("
+						+ table_len + ")'> </i></td> " +
+						"</tr>";
+
+				var sub_total = 0;
+				var total_tax = 0;
+				//console.log(table_len);
+				for (var i = 0; i <= table_len; i++) {
+					sub_total += parseInt(document.getElementById("tot" + i).value);
+					total_tax += parseInt(document.getElementById("tax1" + i).value);
+					
+				}
+				
+				document.getElementById("auto_id").value = parseInt(auto_id) + 1;
+				document.getElementById("product").value;
+				document.getElementById("description").value = "";
+				document.getElementById("price").value = "";
+				document.getElementById("qty").value = "";
+				document.getElementById("tax").value = "";
+				document.getElementById("total").value = "";
+				document.getElementById("sub_total").innerHTML = sub_total;
+				document.getElementById("total_tax").innerHTML = total_tax;
+				document.getElementById("grand_total").innerHTML = sub_total + total_tax;
+			}
+		}
+
+		function deleteRow(no) {
+			document.getElementById("row" + no + "").outerHTML = "";
+			document.getElementById("sub_total").innerHTML = "";
+			document.getElementById("total_tax").innerHTML = "";
+			document.getElementById("grand_total").innerHTML = "";
+		}
+	</script>
+</body>
+</html>

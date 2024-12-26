@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\JEE_Practices_02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1075662100.index
+\JSPCrud\src
+C:\JEE_Practices_02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\421770427.index
+\JSTL_Project_01\src
+C:\JEE_Practices_02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2268402725.index
+\JSP_Project_01\src
+C:\JEE_Practices_02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2790844454.index
+\FoodCart\src

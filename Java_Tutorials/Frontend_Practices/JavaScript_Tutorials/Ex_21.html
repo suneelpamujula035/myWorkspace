@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body bgcolor="aqua">
+    <center><h1>Form Validation In JavaScript</h1>
+        <form action="Success.html" name="form2" method="post" onsubmit="return validName()">
+      Name:          <input type="text" name="name1" pattern="[a-zA-z ]{3,}" title="Name must contains alphabets only"><br/>
+      <input type="submit" value="Submit">
+        </form>
+    </center>
+    <script>
+        function validName(){
+            var name = document.form2.name1.value;
+            if(name == null || name =="")
+            {
+                alert("Please provide name");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

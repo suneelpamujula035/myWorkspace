@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").animate({left:'200px'},5000);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <style>
+        p{
+            background-color: yellow;
+            border: 2px solid red;
+            color: black;
+            text-align: justify;
+            padding: 5px;
+            width: 50%;
+            position: absolute;
+        }
+    </style>
+    <button>Click Me</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, suscipit.</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChangeTextEverySecond</title>
+</head>
+<body>
+    
+    <title>Change text every second</title>
+    <h1 id="heading" align="center">Welcome</h1>
+
+    <script>
+        setInterval(changeColor,1000)
+        function changeColor(){
+            var x = document.getElementById("heading");
+            if(x.style.color =="black"){
+                x.style.color="red";
+            }
+            else if(x.style.color=="red"){
+                x.style.color="blue";
+            }
+            else if(x.style.color=="blue"){
+                x.style.color="black";
+            }
+            else{
+                x.style.color="black"; 
+            }
+        }
+    </script>
+</body>
+</html>

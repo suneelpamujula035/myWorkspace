@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body bgcolor="pink">
+    <h1 align="center">Variables in javascript</h1>
+    <!-- <script>
+        var x = 10;
+        var y = 20;
+        var z = x+y;
+        document.write(z);
+    </script> -->
+    <script>
+        var x = 25;//global variable
+        function add(){
+            var x=50; // local variable
+            document.write("Values of X is (local variable): "+x);
+        }
+        document.write("The value of x is (global variable):"+x+"  ");
+        //document.write("Values of X is : "+x);//to use within that function only
+        add();
+    </script>
+</body>
+</html>

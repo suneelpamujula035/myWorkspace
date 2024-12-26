@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+            width: 100%;
+        }
+        th{
+            background-color: aquamarine;
+            height: 60px;
+        }
+        td{
+            border-bottom: 1px solid;
+            text-align: center;
+            height: 60px;
+        }
+        caption{
+            caption-side: top;
+        }
+        .s{
+            caption-side: bottom;
+        }
+        tr:nth-child(even){
+            background-color: greenyellow;
+        }
+        tr:nth-child(odd){
+            background-color: hotpink;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two axis table</title>
+</head>
+<body>
+    <div style="overflow-x: auto;">
+    <table>
+        <caption>Details of table</caption>
+        <caption class="s">Table:1</caption>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>4</td>
+            <td>6</td>
+            <td>8</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>6</td>
+            <td>9</td>
+            <td>12</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>8</td>
+            <td>12</td>
+            <td>16</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td>10</td>
+            <td>15</td>
+            <td>20</td>
+            <td>25</td>
+        </tr>
+    </table>
+</div>
+    
+</body>
+</html>

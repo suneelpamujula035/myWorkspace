@@ -1,0 +1,86 @@
+ul{
+    background-color: teal;
+    position: absolute;
+    width: 100%;
+    margin: 0%;
+}
+li{
+    float: left;
+    list-style-type: none;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0%;
+
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.sun{
+    position: absolute;
+    right: 60px;
+}
+.sun1{
+    position: absolute;
+    right: 110px;
+}
+a:hover{
+    background-color: pink;
+    color: black
+}
+a:active{
+    background-color: greenyellow;
+}
+h2{
+    margin-top: 80px;
+    position: absolute;
+}
+p{
+    border: 5px solid aquamarine;
+    margin-top: 120px;
+    position: absolute;
+}
+pre{
+    border: 1px solid black;
+    position: absolute;
+    margin-top: 130px;
+}
+body{
+    margin: 0%;
+}
+table{
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 250px;
+}
+.active{
+    background-color: green;
+}
+#su{
+    background-color: green;
+}
+#su1{
+    background-color: green;
+}
+.fa{
+    position: relative;
+    left: 5px;
+    top: 600px;
+    padding: 10px;
+    color: blue;
+}
+.fa-whatsapp{
+    color: green;
+}
+.fa-home{
+    color: blue;
+    position: absolute;
+    left: 40px;
+    top: 1px;
+}
+.fa-home:hover{
+    background-color: greenyellow;
+    color: aquamarine;
+}

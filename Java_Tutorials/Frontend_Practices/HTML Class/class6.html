@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration forms</title>
+</head>
+<body>
+    <fieldset align="center">
+        <legend align="center" style="color: blue;"><strong>Register</strong></legend>
+        <caption align="center"><h1>Registration Form</h1></caption>
+    <form action="">
+        <div>
+            <label for="name">Username</label><br>
+            <input type="text" name="" id="name" required="" placeholder="Enter user name">
+        </div>
+        <div>
+            <label for="pass">Password</label><br>
+            <input type="password" name="" id="pass" pattern="[A-Za-z]{4}[!@#$%]{1}[0-9]{1}" title="Please validate the text" required="" placeholder="Enter Password">
+        </div>
+        <div>
+            <label for="mail">Email</label><br>
+            <input type="email" name="" id="mail" required="" placeholder="Enter mail id">
+        </div>
+        <div>
+            <label for="num">Number</label><br>
+            <input type="number" name="" id="num" required="" placeholder="Enter phone number">
+        </div>
+        <div>
+            <label for="tele">Telephone</label><br>
+            <input type="tel" name="" id="tele" required="" placeholder="Enter telephone number">
+        </div>
+        <div>
+            <label for="radio">Gender</label><br>
+            <input type="radio" name="rad" id="radio">Male
+            <input type="radio" name="rad" id="radio">Female
+            <input type="radio" name="rad" id="radio">Custom
+        </div>
+        <div>
+            <label for="res">Upload Resume</label><br>
+            <input type="file" name="" id="res">
+        </div>
+        <div>
+            <label for="date">Date Of Birth</label><br>
+            <input type="date" name="" id="date">
+        </div>
+        <div>
+            <input type="checkbox" name="" id="agree"><br>
+            <label for="agree">I accept</label>
+        </div>
+        <button>Reset</button><br>
+        <button>Submit</button>
+    </form>
+    </fieldset>
+    
+    
+</body>
+</html>

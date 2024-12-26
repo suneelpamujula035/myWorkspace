@@ -1,0 +1,29 @@
+package com.demo;
+
+public class Hiii {
+
+	public static void main(String[] args) {
+
+		int i, j, temp;
+		int arr[] = {34,98,12,45,23,86,13,44,39,25};
+		
+		for(i=0; i<=arr.length-2; i++)
+		{
+			for(j=0; j<=arr.length-2-i; j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		
+		for(i=0; i<arr.length; i++)
+		{
+			System.out.print(arr[i]);
+		}
+	}
+
+}

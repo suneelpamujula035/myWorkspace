@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //function passing no parameter and no return type
+        function display()
+        {
+            alert("Welcome to user defined functions");
+        }
+        //calling function from same script or different script is possible
+
+        //function passing parameter but no return type
+        function addNumber(a,b){
+            var sum=a+b;
+            alert("The result of two numbers is "+sum);
+        }
+
+        //function passing parameter and return type
+        function calSalary(id,name,salary,designation){
+            if(designation=="Manager")
+            {
+                return salary+5000;
+            }
+            else if(designation=="Developer")
+            {
+                return salary+2000;
+            }
+            else{
+                return "No bonos only salary "+salary;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // display();
+        // addNumber(6,9);
+        // addNumber(3,12);
+        // addNumber(65,72);
+        var result = calSalary(101,"Suneel",75000,"Developer");
+        alert(result);
+    </script>
+</body>
+</html>

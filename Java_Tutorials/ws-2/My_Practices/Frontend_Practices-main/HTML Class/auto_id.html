@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>SNo</th>
+                <th>Product*</th>
+                <th>Description*</th>
+                <th>Price*</th>
+                <th>Qty*</th>
+                <th>Tax%</th>
+                <th>Total</th>
+                <th><input type="button" value="Add row" class="btn btn-primary" onclick="addRows('myTable')" /></th>
+            </tr>
+
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+        <tr>
+            <td colspan="6" rowspan="2">
+                <div class="form-group  col-md-2">
+                    <label>Invoice Note(Optional) :</label>
+                </div>
+                <div class="form-group   col-md-6">
+                    <textarea class="form-control rounded-0" name="invoiceNote" id="invoiceNote" rows="3"
+                        maxlength="1000" placeholder="Invoice Note"></textarea>
+                </div>
+            </td>
+            <td>Sub Total :</td>
+            <td><input type="number" path="subTotal" name="subTotal" id="subTotal" readonly /></td>
+        </tr>
+        <tr>
+            <td>Total Tax :</td>
+            <td><input type="number" path="totalTax" name="totalTax" id="totalTax" readonly /></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="border-top: hidden">
+                <div class="form-group  col-md-2">
+                    <label>Attachment (Optional) :</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="file" name="file" path="file" placeholder="Attachment" id="file" class="form-control">
+                </div>
+            </td>
+            <td>Grand Total:</td>
+            <td><input type="number" path="grandTotal" name="grandTotal" id="grandTotal" readonly /></td>
+        </tr>
+
+    </table>
+    <script>
+        function addRows() {
+            var table = document.getElementById("myTable");
+
+            var counts = (table.rows.length);
+            var temp = counts + 1;
+
+            var row = table.insertRow(counts).outerHTML = "<tr id='row" + counts + "'> " +
+
+                "<td class='form-control autoId'></td> " +
+                "<td  ><select name='listOfProducts[" + counts + "].productName' class='form-control' required='required' ><optgroup label='select_product'><option value='Mobile'>Mobile</option><option value='laptop'>laptop</option></optgroup></select></td> " +
+                "<td  ><input type='text' name='listOfProducts[" + counts + "].description' class='form-control'  required='required'></td> " +
+                "<td  ><input type='text' name='listOfProducts[" + counts + "].price' value=0 class='form-control price' required='required'></td> " +
+                "<td  ><input type='number' name='listOfProducts[" + counts + "].qty' value=0 class='form-control qty' required='required'></td> " +
+                "<td  ><input type='text' name='listOfProducts[" + counts + "].taxPercent' value=0 class='form-control tax' required='required'></td> " +
+                "<td  ><input type='number' name='listOfProducts[" + counts + "].total' value=0 class='form-control total' readonly/></td> " +
+
+                "<td><button onclick=deleteRow(this)><i class='fa fa-trash' style='font-size:24px' ></i></button></td> " +
+                "</tr>";
+            autoIncreament();
+            
+
+        }
+        function autoIncreament() {
+
+		 const list = document.querySelectorAll(".autoId");
+		 list.forEach((ele,idx)=>{
+			 ele.innerHTML=idx+1;
+		 })
+	 }
+            // var array = [];
+            // $('.autoId td').each(function (i,td) {
+            //     array.push($(".td"));
+            // });
+            // //  const list = $('.autoId').val;
+              
+            //  array.forEach((ele,idx)=>{
+            // 	 ele.innerHTML=idx+1;
+            //   })
+            //   console.log(array);
+
+        
+    </script>
+</body>
+
+</html>

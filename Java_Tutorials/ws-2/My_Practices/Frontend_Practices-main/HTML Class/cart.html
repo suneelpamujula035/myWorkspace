@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+<h2 align="center">Shopping Cart</h2>
+<div class="container">
+    <form action="#" th:action="@{/showUserForm}" th:object="${order}" method="get">
+    <table class="table" border="1px" id="example">
+        <thead>
+        <tr>
+            <th>SNo</th>
+            <th>Product Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${itemsList}">
+            <td th:text="${item.id}"><input type="hidden" value="2" th:field="*{product[0].id}"></td>
+            <td ><input type="text" th:field="*{product[0].name}" th:value="${item.name}"/></td>
+<!--            <td th:with="imageUrl=${item.name}"><input type="text" th:field="*{product[0].name}" th:text="${imageUrl}"/></td>-->
+<!--            <td th:with="imageUrl=${item.productThumbNailImage}"><img th:src="${imageUrl}" alt="Please choose correct url" height="100px" width="50px"></td>-->
+            <td><img th:src="${item.productThumbNailImage}" alt="Image not found" height="100px" width="50px"></td>
+            <td class="price" th:text="${item.price}"><input type="hidden" name="${product.price}"></td>
+            <td><input type="number" name="quantity" class="quantity" min="1" max="5" /><input type="hidden" name="${product.quantity}"></td>
+            <td><input class="total" readonly/></td>
+            <td><a th:href="@{/deleteProduct/{id}(id=${item.id})}"><i class="fas fa-trash-alt"
+                                                                      style="font-size: 24px; color: black"></i></a>
+            </td>
+
+        </tr>
+        <input type="hidden" th:field="*{id}">
+        <tr>
+            <td colspan="5"></td>
+            <td>Sub Total :</td>
+            <td><input id="subtotal" th:field="*{subTotal}" readonly></input></td>
+        </tr>
+
+        <tr>
+            <td colspan="5"></td>
+            <td>Total Tax :</td>
+            <td><input id="totaltax" th:field="*{totalTax}" readonly></input></td>
+        </tr>
+
+        <tr>
+            <td colspan="5"></td>
+            <td>Grand Total :</td>
+            <td><input id="grandtotal" th:field="*{grandTotal}" readonly></input></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <a href="/" class="btn btn-primary">Continue Shopping</a>
+        <input type="submit" value="Next" class="btn btn-success"/>
+        <a href="#" class="btn btn-dark" onclick="calculations()">Update Cart</a>
+    </div>
+    </form>
+</div>
+
+<script>
+    function calculations(){
+    var price = document.querySelectorAll(".price");
+    var quantity = document.querySelectorAll(".quantity");
+    var total = document.querySelectorAll(".total");
+
+    var totalCost = [];
+    for(var i=0;i<price.length;i++){
+        total[i].value = parseFloat(price[i].innerHTML)*parseInt(quantity[i].value);
+        totalCost[i] = total[i].value;
+    }
+    subtotal.value = totalCost.reduce((a,c)=>{return parseInt(a)+parseInt(c)},0);
+    totaltax.value = subtotal.value*0.1;
+    grandtotal.value = parseInt(subtotal.value)+parseInt(totaltax.value);
+}
+</script>
+
+</body>
+</html>

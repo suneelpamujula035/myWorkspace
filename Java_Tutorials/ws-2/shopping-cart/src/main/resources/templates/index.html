@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>index</title>
+    <link th:rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+<h2 align="center">Shopping Cart Application</h2>
+
+<div class="container" style="width:1000px">
+    <div class="row card-deck">
+        <div class="col-4 card" th:each="item:${items}">
+            <img th:src="${item.productThumbNailImage}" class="card-img-top" alt="Image not found">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${item.name}"></h5>
+                <p class="card-text" th:text="${item.price}"></p>
+                <a th:href="@{/getProduct/{id}(id=${item.id})}" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadingEffects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $(".p1").fadeOut();
+                $("#para").fadeOut("slow");
+                $("p").fadeOut(5000);
+            });
+            $("#b2").click(function(){
+                $(".p1").fadeIn();
+                $("#para").fadeIn("slow");
+                $("p").fadeIn(5000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class="p1">Welcome to java tutorials</p><br/>
+    <p id="para">Java is a simple language</p><br/>
+    <p>Java is an Object Oriented programming language</p>
+
+    <button id="b1">fadeOut</button>
+    <button id="b2">fadeIn</button>
+</body>
+</html>

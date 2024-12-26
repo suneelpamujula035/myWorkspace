@@ -1,0 +1,23 @@
+{
+    "date":"Fri, 6 August 2021",
+    "people":[
+        {
+            "name":"suneel",
+            "occupation":"student",
+            "age":24,
+            "country":"India"
+        },
+        {
+            "name":"pawan",
+            "occupation":"clerk",
+            "age":45,
+            "country":"USA"
+        },
+        {
+            "name":"ganesh",
+            "occupation":"former",
+            "age":36,
+            "country":"UK"
+        }
+    ]
+}

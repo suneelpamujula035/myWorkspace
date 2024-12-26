@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		.header{color: orange;font-style: italic;font-weight: bolder;}
+		.imgspace{margin-bottom: 50px;border-bottom:1px solid;border-color:lightgray;}
+		.border{border:1px solid;}
+	</style>
+</head>
+<body class="container">
+	<div ng-app="MyApp" ng-controller="myCtrl">
+		<div class="row">
+			<div class="col-3 border">
+				<h2>Recommended</h2>
+				Tiffin<br>
+				Rice Spcl<br>
+				Non-Vegg Combo<br>
+				Biryani Combo<br>
+				Egg Items
+			</div>
+			<div class="col-6">
+				<h1 class="header">SWIGGY</h1>
+				<div ng-repeat="i in items" class="row imgspace">				
+					<div class="col-6">		
+    					<img ng-src="{{i.photo}}" width="200px">
+					</div>
+					<div class="col-6">
+						<div>
+							NAME : {{i.name}}<br>
+							PRICE : {{i.price}}/-
+						</div>
+						<div>
+							<div ng-show="itemExistsInCart(i.itemId)">
+				    			<button ng-click="incresequantity(i.itemId)">+</button>
+					   			<span>{{getQuantityFromCart(i.itemId)}}</span>
+					   			<button ng-click="decresequantity(i.itemId)">-</button>
+			   				</div>
+			   				<div ng-hide="itemExistsInCart(i.itemId)">
+								<button  ng-click="additem(i.itemId)">Add to Cart</button>
+							</div>
+						</div>
+					</div>			
+				</div>
+			</div>
+			<div class="col-3 border">
+				<h1>Cart</h1>
+				<div ng-repeat="i in cart.items" class="row">
+					<div class="col-6">
+						{{i.name}}
+					</div>
+					<div class="col-4">
+						<button ng-click="incresequantity(i.id)">+</button>
+						<span>{{i.quantity}}</span>
+						<button ng-click="decresequantity(i.id)">-</button>
+					</div>
+					<div class="col-2">
+						{{i.price}}
+					</div>
+				</div>
+				<div class="row">  								
+	   					<h4>Total Amount = {{cart.total}}</h4>   			
+	   			</div>  
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var app = angular.module('MyApp', [])
+        app.controller("myCtrl", function($scope) {                      
+            $scope.items = [
+                { itemId: 1, name: "Chicken",price:200, photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo4KooKLeIWkMqd9NRbihsJEPwOzPWws1xiQ&usqp=CAU"},
+                { itemId: 2, name: "Fish",price:150, photo: "https://www.thetakeiteasychef.com/wp-content/uploads/2017/12/KFF-FI1-Compressed.jpg"},
+                { itemId: 3, name: "Prawns",price:300, photo: "https://allaboutthecurry.files.wordpress.com/2019/02/img_3220.jpg?w=1000" },
+                { itemId: 4, name: "Mutton",price:500, photo: "https://hojobangalore.com/wp-content/uploads/2020/05/biryani.jpg"  },
+           ];
+
+           $scope.cart = {
+           		total:0,
+	  			items:[]
+           }    
+           $scope.additem = function(itemId){
+           		
+           	    for (var i = 0; i<= $scope.cart.items.length -1; i++) {
+		  			if ($scope.cart.items[i].id == itemId){
+			  				$scope.cart.items[i].quantity = $scope.cart.items[i].quantity+1;
+			  				$scope.cart.items[i].price = $scope.cart.items[i].price +
+			  				$scope.cart.items[i].originalPrice;
+			  				$scope.cart.total = $scope.cart.total+$scope.cart.items[i].originalPrice;	
+			  				return;
+		  			}		  			
+		  		}
+           		for (var i = $scope.items.length - 1; i >= 0; i--) {
+		  			if($scope.items[i].itemId == itemId){
+		  				var itemPrice = $scope.items[i].price;
+		  				var itemName = $scope.items[i].name;
+		  				var total = $scope.cart.total;
+		  				$scope.cart.total = total + itemPrice;		  				
+		  			}
+		  		}
+		  		var orderItem = {
+		  			id: itemId,
+		  			name: itemName,
+		  			quantity: 1,
+		  			price: itemPrice,
+		  			originalPrice: itemPrice
+		   		};
+		  		$scope.cart.items.push(orderItem);
+            } 
+           $scope.incresequantity = function(itemId){		  	
+		  		for (var i = 0; i<= $scope.cart.items.length -1; i++) {		  			
+		  			if($scope.cart.items[i].id == itemId){
+		  				$scope.cart.items[i].quantity = $scope.cart.items[i].quantity+1;
+		  				$scope.cart.items[i].price = $scope.cart.items[i].price +
+		  				$scope.cart.items[i].originalPrice;
+		  				$scope.cart.total = $scope.cart.total+$scope.cart.items[i].originalPrice;
+		  			}
+		  		}
+		  	},
+		  	$scope.decresequantity = function(itemId){		  	
+		  		for (var i = 0; i<= $scope.cart.items.length -1; i++) {
+		  			if($scope.cart.items[i].id == itemId){		  				
+		  				if ($scope.cart.items[i].quantity==1) {		  					
+		  					$scope.cart.total = $scope.cart.total-$scope.cart.items[i].originalPrice;
+		  					$scope.cart.items.splice(i,1);
+		  				} else {
+		  					 
+		  					$scope.cart.items[i].quantity=$scope.cart.items[i].quantity-1;
+		  					$scope.cart.items[i].price = $scope.cart.items[i].price-$scope.cart.items[i].originalPrice;
+		  					$scope.cart.total = $scope.cart.total-$scope.cart.items[i].originalPrice;
+		  				}		  				
+		  			}
+		  		}
+		  	}
+		  	$scope.itemExistsInCart = function(itemId){		  		
+		  		for (var i = 0; i<= $scope.cart.items.length -1; i++) {
+		  			if ($scope.cart.items[i].id==itemId) {
+		  				return true;
+		  			}
+		  		}	  	
+		  	},
+		  	$scope.getQuantityFromCart = function(itemId){
+		  		for (var i = 0; i<= $scope.cart.items.length -1; i++) {
+		  			if ($scope.cart.items[i].id==itemId) {
+		  			return $scope.cart.items[i].quantity;		  			
+		  			}
+		  		}
+		  	}    
+        });
+    </script>
+
+</body>
+</html>

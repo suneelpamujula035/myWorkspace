@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\JEE_Practices_05\.metadata\.plugins\org.eclipse.jdt.core
+109404040.index
+1167278956.index

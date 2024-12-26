@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <script type="text/javascript" src="quiz.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Online Quiz</h1>
+    </header>
+
+    <div>
+        <div class="container-fluid">
+            <form action="" name="quiz" id="quiz">
+                <div class="quesDiv" id="disHide">
+                    <div>
+                        <label>1.What is the capital of India</label>
+                        <p><input type="radio" name="question1" value="Mumbai">A.Mumbai</p>
+                        <p><input type="radio" name="question1" value="Hyderabad">B.Hyderabad</p>
+                        <p><input type="radio" name="question1" value="Delhi">C.Delhi</p>
+                        <p><input type="radio" name="question1" value="Bangalore">A.Bangalore</p>
+                    </div>
+                    <div>
+                        <label>2.Which year we got independence day?</label>
+                        <p><input type="radio" name="question2" value="1947">A.1947</p>
+                        <p><input type="radio" name="question2" value="2012">B.2012</p>
+                        <p><input type="radio" name="question2" value="1995">C.1995</p>
+                        <p><input type="radio" name="question2" value="1987">A.1987</p>
+                    </div>
+                    <div>
+                        <label>3.Which is the language used in Andhra Pradesh?</label>
+                        <p><input type="radio" name="question3" value="Tamil">A.Tamil</p>
+                        <p><input type="radio" name="question3" value="Malayalam">B.Malayalam</p>
+                        <p><input type="radio" name="question3" value="Kannada">C.Kannada</p>
+                        <p><input type="radio" name="question3" value="Telugu">A.Telugu</p>
+                    </div>
+                </div>
+                <div class="butn">
+                    <input type="submit" value="Start Quiz" class="btn btn-primary btn-lg" onclick="startQuiz()">
+                    <input type="submit" value="Finish" id="fin" class="btn btn-primary btn-lg" onclick="validate()">
+                </div>
+            </form>
+        </div>
+    </div>
+    <p id="res"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrowserObjectModel</title>
+</head>
+<body bgcolor="pink">
+    <center><h1>Browser Object Model</h1></center>
+    <script>
+        document.write(navigator.appName+"<br/>");
+        document.write(navigator.appVersion+"<br/>");
+        document.write(navigator.appCodeName+"<br/>");
+        document.write(navigator.cookieEnabled+"<br/>");
+        document.write(navigator.userAgent+"<br/>");
+        document.write(navigator.language+"<br/>");
+        document.write(navigator.platform+"<br/>");
+        document.write(navigator.product+"<br/>");
+        document.write(navigator.javaEnabled()+"<br/>");
+        document.write(screen.width+"<br/>");//Screen total width
+        document.write(screen.height+"<br/>");//Screen total height
+        var w = window.innerWidth;
+        var h = window.innerHeight
+        document.write(w+"<br/>");//Browser width
+        document.write(h+"<br/>");//Browser height
+        document.write(screen.colorDepth+"<br/>");
+        document.write(screen.pixelDepth+"<br/>");
+        document.write(location.href+"<br/>");
+        document.write(location.hostname+"<br/>");
+        document.write(location.pathname+"<br/>");
+        document.write(location.protocol+"<br/>");
+       //document.write(location.assign("http://www.google.com")+"<br/>");//Whenever we refresh our browser it will navigate to this site
+       
+    </script>
+</body>
+</html>

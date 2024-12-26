@@ -1,0 +1,11 @@
+p{
+    color: red;
+    background-color: aqua;
+    border: 15px solid greenyellow;
+}
+body{
+    background-color: palevioletred;
+    background-image: url("191346.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

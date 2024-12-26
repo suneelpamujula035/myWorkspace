@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisplayEffects</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide();//slow,fast
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <p>Welcome to Java Tutorials</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+</body>
+</html>

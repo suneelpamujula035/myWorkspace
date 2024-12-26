@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            display: flex;
+            /* flex-direction: column-reverse; */
+            flex-direction: row-reverse;
+            /* flex-direction: row; */
+        }
+        li{
+            border: 5px solid red;
+            height: 120px;
+            width: 160px;
+            margin: 20px;
+        }
+        #l1{
+            flex-grow: 2;
+        }
+        #l2{
+            flex-grow: 3;
+        }
+        #l3{
+            flex-grow: 1;
+        }
+        #l4{
+            flex-grow: 4;
+        }
+        #l5{
+            flex-grow: 2;
+        }
+        #l6{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+
+    <div>
+        <ul>
+            <li id="l1">Para 1</li>
+            <li id="l2">Para 2</li>
+            <li id="l3">Para 3</li>
+            <li id="l4">Para 4</li>
+            <li id="l5">Para 5</li>
+            <li id="l6">Para 6</li>
+        </ul>
+    </div>
+</body>
+</html>

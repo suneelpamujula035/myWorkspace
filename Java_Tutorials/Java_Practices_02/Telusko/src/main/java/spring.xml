@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Using XML based configuration -->
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+        
+	<bean id="vehicle" class="com.navin.Telusko.Bike"></bean>
+</beans> -->
+
+
+<!-- Using Annotation based configuration -->
+<!-- <beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+   <context:component-scan base-package="com.navin.Telusko"></context:component-scan>
+   
+   
+   Using property tag inside bean tag
+   <bean id="tyre" class="com.navin.Telusko.Tyre">
+   <property name="brand" value="CEAT"></property>Inserting values using getters and setters
+   <constructor-arg value="MRF"></constructor-arg>Inserting values using Constructors
+   </bean>
+</beans> -->
+
+
+<!-- Using both Annotation  and XML based configurations -->
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+   <context:component-scan base-package="com.navin.Telusko"></context:component-scan>
+   
+   <bean id="tyre" class="com.navin.Telusko.Tyre">
+   </bean>
+</beans>

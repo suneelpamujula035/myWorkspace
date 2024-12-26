@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean id="sim" class="com.suneel.Idea"></bean> -->
+
+<!-- <bean id="student" class="com.dependency.getterSetter.Student">
+<property name="id" value="101"/>
+<property name="name" value="Suneel"/>For setter injection
+<property name="gender" value="M"/>
+</bean>
+<bean id="tiru" class="com.dependency.getterSetter.Student">
+<property name="id" value="102"/>
+<property name="name" value="Tirumalesh"/>
+<property name="gender" value="M"/>
+</bean> -->
+
+<bean id="pawan" class="com.dependency.constructorArg.Student">
+<constructor-arg name="id" value="103"/>
+<constructor-arg name="name" value="Pawan" type="String"/><!-- For constructor injection -->
+<constructor-arg name="gender" value="M" type="char"/>
+</bean>
+<bean id="suresh" class="com.dependency.constructorArg.Student">
+<constructor-arg name="id" value="104"/>
+<constructor-arg name="name" value="Suresh"/>
+<constructor-arg name="gender" value="M"/>
+</bean>
+<bean id="fahim" class="com.dependency.constructorArg.Student">
+<constructor-arg name="id" value="105" type="int"/>
+</bean>
+</beans>

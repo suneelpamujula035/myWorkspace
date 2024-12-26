@@ -1,0 +1,21 @@
+.card img{
+    width: 170px;
+}
+
+.card{
+    display: row;
+    align-items: center;
+}
+
+.row{
+    margin-top:20px;
+}
+
+.card-body {
+    flex-direction: row;
+    align-items: center;
+}
+
+.error {
+        color: red;
+    }

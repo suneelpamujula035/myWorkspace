@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>user-details</title>
+    <script th:src="@{/script.js}"></script>
+    <link th:rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h2 align="center">User Details</h2>
+<a href="/backToCart" class="btn btn-primary">Back To Cart</a>
+<div class="container">
+    <form action="#" th:action="@{/saveUser}" th:object="${userDto}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <div class="mb-3 row">
+            <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="error" th:errors="*{firstName}"/>
+                <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="first name"
+                       required="required">
+            </div>
+            <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="error" th:errors="*{lastName}"/>
+                <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="last name"
+                       required="required">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"/>
+                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="email"
+                       required="required">
+            </div>
+            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('phone')}" th:errorclass="error" th:errors="*{phone}"/>
+                <input type="text" th:field="*{phone}" class="form-control" id="phone" placeholder="phone"
+                       required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="firstName" class="col-sm-8 col-form-label"></label>
+            <div class="col-sm-4"><input type="radio" value="same" id="shippingAddress"
+                                         onchange="printShppingAddress()"/> Shipping Address Same As Billing Address
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="firstName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4"><h6>Billing Address</h6></div>
+            <label for="firstName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4"><h6>Shipping Address</h6></div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingAddressLine1" class="col-sm-2 col-form-label">Address Line 1</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{billingAddressLine1}" class="form-control" id="billingAddressLine1"
+                       placeholder="address line 1" required="required">
+            </div>
+            <label for="shippingAddressLine1" class="col-sm-2 col-form-label">Address Line 1</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{shippingAddressLine1}" class="form-control" id="shippingAddressLine1"
+                       placeholder="address line 1" required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingAddressLine2" class="col-sm-2 col-form-label">Address Line 2</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{billingAddressLine2}" class="form-control" id="billingAddressLine2"
+                       placeholder="address line 2" required="required">
+            </div>
+            <label for="shippingAddressLine2" class="col-sm-2 col-form-label">Address Line 2</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{shippingAddressLine2}" class="form-control" id="shippingAddressLine2"
+                       placeholder="address line 2" required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingCity" class="col-sm-2 col-form-label">City</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{billingCity}" class="form-control" id="billingCity" placeholder="city"
+                       required="required">
+            </div>
+            <label for="shippingCity" class="col-sm-2 col-form-label">City</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{shippingCity}" class="form-control" id="shippingCity" placeholder="city"
+                       required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingState" class="col-sm-2 col-form-label">State</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{billingState}" class="form-control" id="billingState" placeholder="state"
+                       required="required">
+            </div>
+            <label for="shippingState" class="col-sm-2 col-form-label">State</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{shippingState}" class="form-control" id="shippingState"
+                       placeholder="state" required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingCountry" class="col-sm-2 col-form-label">Country</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{billingCountry}" class="form-control" id="billingCountry"
+                       placeholder="country" required="required">
+            </div>
+            <label for="shippingCountry" class="col-sm-2 col-form-label">Country</label>
+            <div class="col-sm-4">
+                <input type="text" th:field="*{shippingCountry}" class="form-control" id="shippingCountry"
+                       placeholder="country" required="required">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="billingZipCode" class="col-sm-2 col-form-label">Zip Code</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('billingZipCode')}" th:errorclass="error" th:errors="*{billingZipCode}"/>
+                <input type="text" th:field="*{billingZipCode}" class="form-control" id="billingZipCode"
+                       placeholder="zip code" required="required">
+            </div>
+            <label for="shippingZipCode" class="col-sm-2 col-form-label">Zip Code</label>
+            <div class="col-sm-4">
+                <p th:if="${#fields.hasErrors('shippingZipCode')}" th:errorclass="error"
+                   th:errors="*{shippingZipCode}"/>
+                <input type="text" th:field="*{shippingZipCode}" class="form-control" id="shippingZipCode"
+                       placeholder="zip code" required="required">
+            </div>
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-dark">Save</button>
+            <button type="reset" class="btn btn-outline-primary">Cancel</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

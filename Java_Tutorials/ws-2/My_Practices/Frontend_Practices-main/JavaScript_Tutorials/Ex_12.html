@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body bgcolor="indigo">
+    <h1 align = "center">Objects in JavaScript</h1>
+    <!-- <script>
+        var stu1 = {rollNo:101,name:"Suneel",branch:"Mechanical"};
+        document.write(stu1.rollNo+"<br/>");
+        document.write(stu1.name+"<br/>");
+        document.write(stu1.branch+"<br/>");
+    </script> -->
+    <!-- <script>
+        var emp = new Object();
+        emp.id=102;
+        emp.name="Raju"
+        emp.salary=35890.76;
+        document.write(emp.id+" "+emp.name+"  "+emp.salary);
+    </script> -->
+
+    <script>
+        function student(rollNo,name,address,branch)
+        {
+
+            this.rollNo=rollNo;
+            this.name=name;
+            this.address=address;
+            this.branch=branch;
+        }
+        var stu1 = new student(501,"Sandeep","Banglore","CSE");
+        document.write(stu1.rollNo+"  "+stu1.name+"  "+stu1.address+"  "+stu1.branch);
+    </script>
+</body>
+</html>

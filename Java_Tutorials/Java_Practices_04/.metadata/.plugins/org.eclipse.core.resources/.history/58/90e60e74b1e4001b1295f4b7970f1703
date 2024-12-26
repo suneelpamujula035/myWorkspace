@@ -1,0 +1,30 @@
+package com.java.practices;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Test1 {
+	public static void main(String[] args) {
+		String input = "aabbb";
+		char[] charArray = input.toCharArray();
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		for (Character data : charArray) {
+			if (map.containsKey(data)) {
+				int oldval = map.get(data);
+				int newval = oldval + 1;
+				map.put(data, newval);
+			} else {
+				map.put(data, 1);
+			}
+		}
+		Set<Entry<Character, Integer>> lmap = map.entrySet();
+		for (Map.Entry<Character, Integer> data : lmap) {
+			String result = data.getKey() + "  -  " + data.getValue();
+			System.out.println(result);
+		}
+
+	}
+
+}

@@ -1,0 +1,84 @@
+{
+    "answers":[
+        {
+            "id":"1",
+            "answer":"Biro Brothers"
+        },
+        {
+            "id":"2",
+            "question":"1950s"
+        },
+        {
+            "id":"3",
+            "question":"Pneumatic rubber tire"
+        },
+        {
+            "id":"4",
+            "question":"Marie Curie"
+        },
+        {
+            "id":"5",
+            "question":"1874"
+        },
+        {
+            "id":"6",
+            "answer":"Charles Richter"
+        },
+        {
+            "id":"7",
+            "question":"Thermometer"
+        },
+        {
+            "id":"8",
+            "question":"Rotary steam engine"
+        },
+        {
+            "id":"9",
+            "question":"Sir Frank Whittle"
+        },
+        {
+            "id":"10",
+            "question":"Parachute"
+        },
+        {
+            "id":"11",
+            "answer":"Roger Bacon"
+        },
+        {
+            "id":"12",
+            "question":"Bifocal spectacles"
+        },
+        {
+            "id":"13",
+            "question":"Mary Kies"
+        },
+        {
+            "id":"14",
+            "question":"Thomas Alva Edison"
+        },
+        {
+            "id":"15",
+            "question":"Otto"
+        },
+        {
+            "id":"16",
+            "answer":"Waterbed"
+        },
+        {
+            "id":"17",
+            "question":"Ouija board"
+        },
+        {
+            "id":"18",
+            "question":"James Hargreaves"
+        },
+        {
+            "id":"19",
+            "question":"Lewis Edson Waterman"
+        },
+        {
+            "id":"20",
+            "question":"Diner's Club"
+        }
+    ]
+}

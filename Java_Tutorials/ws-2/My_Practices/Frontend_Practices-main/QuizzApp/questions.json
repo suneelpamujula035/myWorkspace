@@ -1,0 +1,164 @@
+{
+    "questions":[
+        {
+            "id":"1",
+            "question":"Who invented the BALLPOINT PEN?",
+            "a":"Biro Brothers",
+            "b":"Waterman Brothers",
+            "c":"Bicc Brothers",
+            "d":"Write Brothers"
+        },
+        {
+            "id":"2",
+            "question":"In which decade was the first solid state integrated circuit demonstrated?",
+            "a":"1950s",
+            "b":"1960s",
+            "c":"1970s",
+            "d":"1980s"
+        },
+        {
+            "id":"3",
+            "question":"What J. B. Dunlop invented?",
+            "a":"Pneumatic rubber tire",
+            "b":"Automobile wheel rim",
+            "c":"Rubber boot",
+            "d":"Model airplanes"
+        },
+        {
+            "id":"4",
+            "question":"Which scientist discovered the radioactive element radium?",
+            "a":"Isaac Newton",
+            "b":"Albert Einstein",
+            "c":"Benjamin Franklin",
+            "d":"Marie Curie"
+        },
+        {
+            "id":"5",
+            "question":"When was barb wire patented?",
+            "a":"1874",
+            "b":"1840",
+            "c":"1895",
+            "d":"1900"
+        },
+        {
+            "id":"6",
+            "question":"What is the name of the CalTech seismologist who invented the scale used to measure the magnitude of earthquakes?",
+            "a":"Charles Richter",
+            "b":"Hiram Walker",
+            "c":"Giuseppe Mercalli",
+            "d":"Joshua Rumble"
+        },
+        {
+            "id":"7",
+            "question":"What Galileo invented?",
+            "a":"Barometer",
+            "b":"Pendulum clock",
+            "c":"Microscope",
+            "d":"Thermometer"
+        },
+        {
+            "id":"8",
+            "question":"What James Watt invented?",
+            "a":"Diving bell",
+            "b":"Steam boat",
+            "c":"Hot air balloon",
+            "d":"Rotary steam engine"
+        },
+        {
+            "id":"9",
+            "question":"Who invented Jet Engine?",
+            "a":"Sir Frank Whittle",
+            "b":"Gottlieb Daimler",
+            "c":"Roger Bacon",
+            "d":"Lewis E. Waterman"
+        },
+        {
+            "id":"10",
+            "question":"What invention caused many deaths while testing it?",
+            "a":"Dynamite",
+            "b":"Ladders",
+            "c":"Race cars",
+            "d":"Parachute"
+        },
+        {
+            "id":"11",
+            "question":"Who invented Gunpowder?",
+            "a":"Ferdinand Von Zeppelin",
+            "b":"Sir Frank Whittle",
+            "c":"Roger Bacon",
+            "d":"Leo H Baekeland"
+        },
+        {
+            "id":"12",
+            "question":"What Benjamin Franklin invented?",
+            "a":"Bifocal spectacles",
+            "b":"Radio",
+            "c":"Barometer",
+            "d":"Hygrometer"
+        },
+        {
+            "id":"13",
+            "question":"Who was the first American female to patent her invention, a method of weaving straw with silk?",
+            "a":"Marjorie Joyner",
+            "b":"Margaret Knight",
+            "c":"Amanda Jones",
+            "d":"Mary Kies"
+        },
+        {
+            "id":"14",
+            "question":"Who invented Gramophone?",
+            "a":"Michael Faraday",
+            "b":"Fahrenheit",
+            "c":"Sir Alexander Graham Bell",
+            "d":"Thomas Alva Edison"
+        },
+        {
+            "id":"15",
+            "question":"Who invented Internal Combustion Engine?",
+            "a":"Roger Bacon",
+            "b":"Karl Benz",
+            "c":"Dr. Alan M. Turing",
+            "d":"Otto"
+        },
+        {
+            "id":"16",
+            "question":"What furniture item was invented by California furniture designer Charles Prior Hall in 1968?",
+            "a":"Sofa bed",
+            "b":"Captain's chair",
+            "c":"Waterbed",
+            "d":"Hammock"
+        },
+        {
+            "id":"17",
+            "question":"What 'game' was first produced by the Southern Novelty Company in Baltimore, Maryland in 1892?",
+            "a":"Frisbee",
+            "b":"Monopoly",
+            "c":"Ouija board",
+            "d":"Ping Pong"
+        },
+        {
+            "id":"18",
+            "question":"Who invented the Spinning Jenny?",
+            "a":"Thornton Hargreaves",
+            "b":"Peter Hargreaves",
+            "c":"James Hargreaves",
+            "d":"Simon Hargreaves"
+        },
+        {
+            "id":"19",
+            "question":"Which insurance salesman invented the fountain pen in 1884?",
+            "a":"Lewis Edson Waterman",
+            "b":"Sir William Grove",
+            "c":"Charles Kettering",
+            "d":"George Fountain"
+        },
+        {
+            "id":"20",
+            "question":"What charge card, developed in 1950, was the first to be accepted nationally in the US?",
+            "a":"Visa",
+            "b":"Discover",
+            "c":"MasterCharge",
+            "d":"Diner's Club"
+        }  
+    ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .h{
+            overflow: hidden;
+        }
+        .h figure{
+            position: relative;
+            left: 0px;
+            margin: 0px;
+            width: 500%;
+            animation: 15s slideshow infinite;
+        }
+        img{
+            width: 20%;
+            float: left;
+        }
+        @keyframes slideshow{
+            0%{
+                left: -0%;
+            }
+            25%{
+                left: -100%;
+            }
+            50%{
+                left: -200%;
+            }
+            75%{
+                left: -300%;
+            }
+            100%{
+                left: 100%;
+            }
+        }  
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="h">
+        <figure>
+            <img src="nature2.jpg" alt="">
+            <img src="nature3.jpg" alt="">
+            <img src="nature4.jpg" alt="">
+            <img src="nature5.jpg" alt="">
+            <img src="nature2.jpg" alt="">
+        </figure>
+    </div>
+    
+</body>
+</html>

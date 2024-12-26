@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan
+		base-package="com.navin.Telusko"></context:component-scan>
+
+	<bean id="adrs" class="com.suneel.Spring_02.Address">
+		<property name="city" value="Banglore" />
+		<property name="state" value="Karnataka" />
+		<property name="zipcode" value="524785" />
+	</bean>
+
+	<bean id="emp1" class="com.suneel.Spring_02.Employee">
+		<property name="eid" value="102" />
+		<property name="ename" value="Pawan" />
+		<property name="eaddress" value="Hyderabad" />
+		<constructor-arg ref="adrs" />
+	</bean>
+	<bean id="emp2" class="com.suneel.Spring_02.Employee">
+		<property name="eid" value="103" />
+		<property name="ename" value="Tiru" />
+		<property name="eaddress" value="Chennai" />
+		<constructor-arg ref="adrs" />
+	</bean>
+</beans>

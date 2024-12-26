@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time</title>
+</head>
+<body bgcolor="cyan" text="red">
+   <center><h1>Date & Time in JavaScript</h1>
+    <!-- <script>
+        var today = new Date();
+        document.write(today);
+    </script> -->
+    <!-- <script>
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth()+1;
+        var year = today.getFullYear();
+        //month=month+1;//Because of it uses from index
+        document.write(day+"-"+month+"-"+year);
+    </script> -->
+    <!-- <script>
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        document.write(h+":"+m+":"+s);
+    </script> -->
+    <span id="sun"></span>
+    <script>
+        function getTime(){
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+       //document.write(h+":"+m+":"+s);
+        document.getElementById("sun").innerHTML=h+":"+m+":"+s;
+        setInterval(getTime,1000);
+        }
+        getTime();
+    </script>
+    </center>
+</body>
+</html>

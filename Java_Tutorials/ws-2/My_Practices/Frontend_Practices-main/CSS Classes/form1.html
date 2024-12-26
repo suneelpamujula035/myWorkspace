@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url(img3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-position: fixed; */
+        }
+        .n{
+            background-color:#363636;
+            position: absolute;
+            top: 200px;
+            left: 500px;
+        }
+        form{
+            padding: 20px;
+        }
+        div{
+            padding: 10px;
+        }
+        input[type=submit]{
+            background-color: green;
+            width:70px;
+            height: 30px;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+        }
+        input:focus{
+            border: 3px solid blue;
+            outline-style: none;
+        }
+        .fa-question-circle{
+            margin: 7px;
+            color: blue;
+            cursor: pointer;
+        }
+        .fa-eye{
+            position: absolute;
+            right: 70px;
+            top: 100px;
+            cursor: pointer;
+        }
+        img{
+            width: 4%;
+            position: absolute;
+            left: 620px;
+            top: 145px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="icon.png" alt="Image not displayed due to some reasons....">
+    <div class="n">
+        <form>
+            <div><input type="text" placeholder="Username"></div>
+            <div><input type="password" placeholder="Password"><i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <div><input type="password" placeholder="Conform Password"></div>
+            <div><input type="email" placeholder="Email"><i class="fa fa-question-circle" aria-hidden="true"></i>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

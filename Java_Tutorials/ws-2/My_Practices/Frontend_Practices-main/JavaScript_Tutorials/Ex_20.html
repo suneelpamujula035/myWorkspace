@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body bgcolor="yellow">
+    <center><h1>Form Validation In JavaScript</h1>
+        <form action="Success.html" name="form1" method="post" onsubmit="return passwordValidation()">
+      Password:          <input type="text" name="pass1"><br/>
+      Conform Password : <input type="text" name="pass2"><br/>
+      <input type="submit" value="Submit">
+        </form>
+    </center>
+    <script>
+        function passwordValidation(){
+            var password = document.form1.pass1.value;
+            var cpassword = document.form1.pass2.value;
+
+            if(password.length<6){
+                alert("Password must contain 6 characters");
+                return false;
+            }
+
+            if(password == cpassword){
+                return true;
+            }
+            else{
+                alert("Password and conform password must be same");
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>

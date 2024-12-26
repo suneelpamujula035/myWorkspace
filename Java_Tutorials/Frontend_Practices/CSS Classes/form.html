@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        label{
+            color: orangered;
+            padding: 5px;
+            font-style: oblique;
+            color: rebeccapurple;
+        }
+        .j{
+            border: 1px solid orangered;
+            position: absolute;
+            left: 300px;
+            padding: 50px;
+            background-color: aquamarine;
+            top: 60px;
+            /* border-bottom: 15px solid greenyellow; */
+            border: none;
+        }
+        input{
+            /* border: none; */
+            border-radius: 10%;
+        }
+        /* .k{
+            border-bottom: 2px solid red;
+        } */
+        .m{
+            background-color: greenyellow;
+            color: whitesmoke;
+        }
+        label::after{
+            content: '*';
+            color: red;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form>
+    <div class="j">
+    <div>
+        <label for="name">Username</label><br>
+        <input class="k" type="text" name="name" id="name" placeholder="Enter UserName" required="">
+    </div>
+    <div>
+        <label for="pass">Password</label><br>
+        <input class="k" type="password" name="pass" id="pass" placeholder="Enter Password" required="">
+    </div>
+    <div>
+        <input class="m" type="submit" value="submit">
+    </div>
+</div>
+</form>
+</body>
+</html>

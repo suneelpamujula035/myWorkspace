@@ -1,0 +1,25 @@
+{
+    "questions":[
+        {
+            "question":"What is the capital of India",
+            "a":"Mumbai",
+            "b":"Hyderabad",
+            "c":"Delhi",
+            "d":"Bangalore"
+        },
+        {
+            "question":"Which year we got independence day?",
+            "a":"1947",
+            "b":"2012",
+            "c":"1995",
+            "d":"1987"
+        },
+        {
+            "question":"Which is the language used in Andhra Pradesh?",
+            "a":"Tamil",
+            "b":"Malayalam",
+            "c":"Kannada",
+            "d":"Telugu"
+        }
+    ]
+}

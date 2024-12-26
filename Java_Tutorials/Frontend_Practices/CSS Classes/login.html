@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="moon.css">
+    <style>
+        table{
+            background-color: black;
+            border: 1px solid black;
+            padding: 40px;
+            
+        }
+        label{
+            color: white;
+            padding: 35px;
+        }
+        input{
+            width: 90%;
+            border: none;
+            /* border-radius: 5%; */
+            
+        }
+        label::after{
+            content: '*';
+            color: red;
+        }
+        .ko{
+            width: 70px;
+            color:white;
+            background-color: blue;
+            margin-left: 30px;
+            border-radius: 5%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <form>
+    <table>
+        <div>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" name="name" id="name" placeholder="Enter Name"></td>
+                <td><label for="pass">Email</label></td>
+                <td><input type="email" name="pass" id="pass" placeholder="Enter Email"></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <td><label for="no">Phone</label></td>
+                <td><input type="number" name="no" id="no" placeholder="Enter Phone"></td>
+                <td><label for="ag">Age</label></td>
+                <td><input type="number" name="ag" id="ag" placeholder="Enter Age"></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <td><label for="pro">Profession</label></td>
+                <td><input type="text" name="pro" id="pro" placeholder="Enter Profession"></td>
+                <td><label for="blo">Blood Group</label></td>
+                <td><input type="text" name="blo" id="blo" placeholder="Enter Blood Group"></td>
+            </tr>
+        </div>
+        <div>
+            <td><label for="loc">Location</label></td>
+            <td><input type="text" name="loc" id="loc" placeholder="Enter Location"></td>
+        </div>
+        <div>
+            <tr><td><input class="ko" type="submit" value="JoinNow"></td></tr>
+        </div>
+    </form>
+        
+    </table>
+    
+</body>
+</html>

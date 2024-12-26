@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "40f590c6-2d44-4232-aadb-f65ab248e287",
+		"name": "shopping-cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\":\"OnePlus 8\",\r\n        \"price\":30000,\r\n        \"productThumbNailImage\":\"https://s3b.cashify.in/gpro/uploads/2020/04/12095748/oneplus-8-pro-front-1.png\",\r\n        \"maxQuantityAllowed\":2,\r\n        \"description\":\"one plus 8 8GB RAM 128GB ROM\"\r\n    },\r\n    {\r\n        \"name\":\"mi 11i\",\r\n        \"price\":25000,\r\n        \"productThumbNailImage\":\"https://specifications-pro.com/wp-content/uploads/2021/03/Xiaomi-Mi-11i-600x600.jpg\",\r\n        \"maxQuantityAllowed\":4,\r\n        \"description\":\"mi 11i 8GB RAM 128GB ROM\"\r\n    },\r\n    {\r\n        \"name\":\"Realme 8\",\r\n        \"price\":17000,\r\n        \"productThumbNailImage\":\"https://m.media-amazon.com/images/I/41vx5FJuCFL._AC_SS450_.jpg\",\r\n        \"maxQuantityAllowed\":5,\r\n        \"description\":\"Realme 8 6GB RAM 128GB ROM\"\r\n    },\r\n    {\r\n        \"name\":\"Poco M2 Pro\",\r\n        \"price\":14000,\r\n        \"productThumbNailImage\":\"https://static.digit.in/default/e08edde7d170055458a748d835fc9647f72c04d3.jpeg?tr=w-1200\",\r\n        \"maxQuantityAllowed\":3,\r\n        \"description\":\"Poco M2 Pro 4GB RAM 64GB ROM\"\r\n    },\r\n    {\r\n        \"name\":\"iPhone XR\",\r\n        \"price\":35000,\r\n        \"productThumbNailImage\":\"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-xr-white-gallery-2020?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1578943280921\",\r\n        \"maxQuantityAllowed\":6,\r\n        \"description\":\"iPhone XR 64 GB\"\r\n    },\r\n    {\r\n        \"name\":\"iPhone 12\",\r\n        \"price\":65000,\r\n        \"productThumbNailImage\":\"https://media.croma.com/image/upload/v1605271851/Croma%20Assets/Communication/Mobiles/Images/8999510245406.png\",\r\n        \"maxQuantityAllowed\":2,\r\n        \"description\":\"iPhone 12 128GB\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/saveItems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveItems"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
